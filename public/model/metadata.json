@@ -1,0 +1,17 @@
+{
+    "tfjsVersion": "1.7.4",
+    "tmVersion": "2.4.10",
+    "packageVersion": "0.8.4-alpha2",
+    "packageName": "@teachablemachine/image",
+    "timeStamp": "2025-09-28T07:27:34.406Z",
+    "userMetadata": {},
+    "modelName": "tm-my-image-model",
+    "labels": [
+        "Healthy",
+        "Leaf Blight",
+        "Powdery Mildew",
+        "Rust Disease",
+        "Nutrient Deficiency"
+    ],
+    "imageSize": 224
+}

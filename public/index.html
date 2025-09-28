@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>LeafSense AI - Plant Health Monitor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="app-header">
+        <h1>🌿 LeafSense AI</h1>
+        <p class="subtitle">Your AI-Powered Plant Health Assistant</p>
+      </header>
+
+      <main class="content-area">
+        <section class="card upload-card">
+          <h2>1. Analyze a Leaf</h2>
+          <p>Use your webcam or upload an image to get an instant health analysis.</p>
+          <div class="controls">
+            <button id="startWebcam">Start Webcam</button>
+            <button id="captureBtn">Capture Image</button>
+            <input type="file" id="imageUpload" accept="image/*" />
+          </div>
+          <div class="camera-view">
+             <video id="webcam" autoplay playsinline width="320" height="240"></video>
+             <canvas id="capture" width="320" height="240" style="display:none"></canvas>
+          </div>
+        </section>
+
+        <section class="card result-card">
+          <h2>2. Analysis Report</h2>
+          <div class="result-content">
+            <img id="preview" src="" alt="Your uploaded leaf image will appear here" />
+            <div class="prediction-wrapper">
+              <p id="predictionText">Awaiting analysis...</p>
+              <div id="remedy" class="remedy"></div>
+            </div>
+          </div>
+          <div class="actions">
+             <div class="pdf-action">
+                <button id="generatePdf">Generate PDF Report</button>
+                <a id="downloadPdf" download="plant_report.pdf" style="display:none">Download PDF</a>
+             </div>
+             <div class="whatsapp-action">
+                <input id="phoneNumber" placeholder="Enter phone no. (+91...)" />
+                <button id="sendViaTwilio">Send via WhatsApp</button>
+             </div>
+          </div>
+           <p id="openWhatsApp" class="note">Manual WhatsApp option is also available in your script.</p>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
